@@ -1,0 +1,14 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.7.3;
+
+import './ICorrectness.sol';
+
+contract Correctness is ICorrectness {
+  function input1() override external pure returns (bytes memory _input1) { _input1 = hex"e791b11f94a48e020d80837951ea9496beb41056a536cb788b0e5737e49a0c3efec829a564946570e84dc8d7ba64c47f3e1694d49dcf4d7b8db9ebcc3faa13d675a7b5d8bc10a182aa1781542a95e8aa2328ae4d7a0437a03ac22cc93266bd65b4ceb578c59bb46ef98a28a3c0f6dcb1b601d231f18994b455c7669b2d4b4e28eee65e9a474ffcdcc16dabe54738f26b602a18ad50e5143faf71f2c3bb073800e5490d8ec8f7ebd88c0bb788c85b473c12478b7a661d4febdd39d91c4a1b9ff455a17ac70c2c10ad"; }
+  function input2() override external pure returns (bytes memory _input2) { _input2 = hex"e706b1e5327ed112a3ad65ce36e1f611a1e59a06b2d08c5d971d858495604570d93494faf4c75b1d410dea6a6b0bd02c011aeb817e5606aaa1ac51ef46dc86fdd19f19626b8ee63f2a02518cde17f81c871b4dd7c1d83d706cb3be2d1a945d0e936139d59ad5f14b77e4c04084becc46fd8a58a6e7017da1274990e69c578bbba654867722f55ec1ed81155afec8cf9d90b844755724ddbd55cc1ef96b3a4b1a352100a10fdf4e7e6c8e479db103c3d946edbd7e7ff7f812f2de3434dc756236239b1bdd3688faec"; }
+  function input3() override external pure returns (bytes memory _input3) { _input3 = hex"99e121866f1765a5c05907a78183247c1692af243329ff7aa0f395ab2bbd96c3a837059aab053a895864125f2b3f80ce597cc3e6b9d885d50e887ce48f8d13130707bf820220828ecdd7f0554494eb491552947c373a132092177df319e0f7bc27685ff4a91d6ea7f285778482a4626a0a84dc969504844b0b4c909378abb832289cf7fe424f64879de7dfdcfb4eff429d2a8ab3f9c9f8d94ef068b366cf297ba7c9c26ec5a68327d025313c7fe7cd2a61230df3d0e8b922fa46a99b0b175e21ba3b852b81e1d1db"; }
+  function isOutput1Correct(bytes memory output1) override external pure returns (bool) { return keccak256(output1) == 0x39ec89f3a8cad468c5b35fa71f54db23fc1e36ad1efdd34f3a63f72f3c5af382; }
+  function isOutput2Correct(bytes memory output2) override external pure returns (bool) { return keccak256(output2) == 0x66c5fb26f1090e6cf18bc6a4bf5e9a3b2d2b08e399653530b84ac3c4f981d622; }
+  function isOutput3Correct(bytes memory output3) override external pure returns (bool) { return keccak256(output3) == 0xdae99230b8e2ed9dc07fa4079eb5bd83ba92daf19f1f87a028415b256fb6f721; }
+  function gasLimit() override external pure returns (uint) { return 1000000; }
+}
